@@ -4,14 +4,23 @@
         <div class="time">
             {{ time }}
         </div>
-        <div class="to3D" @click="show3DView">手势3D视图<span class="icon iconfont">&#xe600;</span></div>
+        <div class="to3D">
+            <span class="btn" @click="show3DView">手势3D视图</span>
+            <span class="btn" @click="toGame('/snake')">贪吃蛇</span>
+            <span class="btn" @click="toGame('/box')">推箱子</span>
+        </div>
     </div>
 </template>
 
 <script setup>
     import { storeToRefs } from 'pinia';
+    import { useRouter } from 'vue-router'
     import useGesStore from '../../store';
     const { show3D } = storeToRefs(useGesStore())
+    const router = useRouter()
+    let toGame = (path) => {
+        router.push(path)
+    }
     let show3DView = () => {
         show3D.value = true
     }
@@ -46,6 +55,7 @@
         line-height: 45px;
         color: #fff;
         text-align: center;
+        z-index: 9999999;
         .title{
             float: left;
             margin-left: 10px;
@@ -59,13 +69,15 @@
             float: right;
             margin-right: 10px;
             cursor: pointer;
-            .icon{
-                font-size: 20px;
-                padding-top: 5px;
+            .btn{
+                margin: 0 10px;
+                float: right;
+                font-size: 16px;
+            }
+            .btn:hover{
+                text-decoration: underline;
             }
         }
-        .to3D:hover{
-            text-decoration: underline;
-        }
+        
     }
 </style>

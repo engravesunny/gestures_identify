@@ -3,13 +3,14 @@
         <div class="nav">
             <nav-bar></nav-bar>
         </div>
-        <div class="main_body">
+        <div v-if="route?.path==='/'" class="main_body">
             <div class="right_list">
                 <right-list></right-list>
                 <video-display></video-display>
             </div>
             <div class="left_display"><left-display></left-display></div>
         </div>
+        <router-view v-else></router-view>
         <div class="threeMain" v-if="show3D">
             <three-con></three-con>
         </div>
@@ -24,7 +25,10 @@ import RightList from './components/rightList/index.vue'
 import leftDisplay from './components/leftDisplay/index.vue'
 import useGesStore from '../../store'
 import { storeToRefs } from 'pinia'
+import { onMounted } from 'vue'
 const { show3D } = storeToRefs(useGesStore())
+
+const route = useRoute()
 
 
 </script>

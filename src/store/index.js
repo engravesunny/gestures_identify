@@ -35,8 +35,8 @@ const useGesStore = defineStore('ges',{
         clearGes(){
             this.gesList.splice(0,this.gesList.length)
         },
-        addGesName(name,time){
-            this.gesDocName.push({name,time})
+        addGesName(analysis,time){
+            this.gesDocName.push({analysis,time})
         },
         removeGesName(index){
             this.gesDocName.splice(index, 1)

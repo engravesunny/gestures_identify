@@ -42,3 +42,16 @@ img{
 .right_list_container .el-scrollbar__thumb{
     opacity: 0 !important;
 }
+
+.left-top .upload_container{
+    padding-top: 35px;
+}
+
+.left-bottom .right_list_container .nav .remove{
+    display: none;
+}
+
+.blocks img{
+    width: 40px;
+    height: 40px;
+}

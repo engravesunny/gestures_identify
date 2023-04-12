@@ -19,7 +19,7 @@ import useGesStore from '../../../../store';
 import { storeToRefs } from 'pinia';
 const { gesDocName } = storeToRefs(useGesStore())
 
-let removeAllName = ():void => {
+let removeAllName = () => {
     useGesStore().clearGesName()
     useGesStore().clearGes()
 }
@@ -71,11 +71,14 @@ let removeAllName = ():void => {
                 color: #fff;
                 background-color: var(--list-item-color);
                 margin: 10px 0;
-                padding: 10px 0 10px 10px;
+                padding: 4px 10px;
                 box-sizing: border-box;
                 text-align: start;
+                display: -webkit-box;
                 overflow: hidden;
-                white-space: nowrap;
+                word-wrap: break-word;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
                 text-overflow: ellipsis;
                 cursor: pointer;
                 .time{
