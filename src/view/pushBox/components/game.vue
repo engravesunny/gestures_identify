@@ -293,6 +293,10 @@ input {
   margin: 0 auto;
 }
 #begin {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%);
   cursor: pointer;
   z-index: 1002;
   width: 100px;
