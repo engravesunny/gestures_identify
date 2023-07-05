@@ -9,8 +9,8 @@ import HomePage from './view/home/index.vue'
 </script>
 
 <style>
-  .main{
-    width: 100%;
-    height: 100vh;
-  }
+.main {
+  width: 100%;
+  height: 100vh;
+}
 </style>
